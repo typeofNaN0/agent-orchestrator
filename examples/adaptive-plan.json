@@ -1,0 +1,46 @@
+{
+  "context_records": [
+    {
+      "key": "scope",
+      "kind": "constraint",
+      "content": "Implement only the requested change and preserve unrelated behavior.",
+      "files": []
+    }
+  ],
+  "required_context_keys": [
+    "scope"
+  ],
+  "reviewer_context_keys": [
+    "scope"
+  ],
+  "acceptance_criteria": [
+    "Requested behavior is implemented",
+    "Relevant regression checks pass"
+  ],
+  "checks": [],
+  "sidekicks": [
+    {
+      "id": "implementation",
+      "task": "Implement the original task and add focused regression coverage.",
+      "context": "Replace this with the specific requirements and file references.",
+      "task_type": "implementation",
+      "assessment": {
+        "ambiguity": 1,
+        "judgment": 2,
+        "failure_impact": 1,
+        "verification_difficulty": 1,
+        "mechanical": 1
+      },
+      "rationale": "Bounded implementation with some judgment, suitable for the configured complex route.",
+      "depends_on": [],
+      "context_keys": [],
+      "checks": [],
+      "acceptance_criteria": [
+        "Relevant regression coverage is included"
+      ],
+      "model": "sol",
+      "effort": "high"
+    }
+  ],
+  "reviewer_prompt": "Integrate and finish the original request. Inspect actual changes and test evidence, resolve ambiguity, and request bounded mechanical repairs when useful. Accept only when all requirements are met."
+}

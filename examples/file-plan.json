@@ -1,0 +1,14 @@
+{
+  "sidekicks": [
+    {
+      "id": "implementation",
+      "task_file": "prompts/assignment.md",
+      "context_file": "prompts/context.md",
+      "model": "sol",
+      "effort": "high",
+      "rationale": "Bounded implementation with explicit acceptance criteria.",
+      "depends_on": []
+    }
+  ],
+  "reviewer_prompt_file": "prompts/reviewer.md"
+}

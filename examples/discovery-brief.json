@@ -1,0 +1,19 @@
+{
+  "reason": "Understand the relevant architecture and verification surface before planning implementation.",
+  "investigations": [
+    {
+      "id": "source-map",
+      "task": "Locate the code paths relevant to the original request. Trace current behavior and dependencies; identify public interfaces, conventions, risks, and unknowns. Cite inspected files and symbols.",
+      "context": "Replace this with the user's constraints and any known entry points. Investigate only; do not implement or run tests.",
+      "model": "sol",
+      "effort": "medium"
+    },
+    {
+      "id": "verification-map",
+      "task": "Inspect existing tests and project configuration. Identify applicable test commands, regression coverage gaps, and environment prerequisites. Report candidate commands without executing them.",
+      "context": "Read-only investigation to inform the implementation plan and executable check configuration.",
+      "model": "luna",
+      "effort": "medium"
+    }
+  ]
+}

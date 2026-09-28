@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "max_sidekicks": 6,
+  "max_parallel": 3,
+  "timeout_seconds": 1800,
+  "max_context_chars": 48000,
+  "max_report_chars": 16000,
+  "max_prompt_chars": 180000,
+  "workspace_mode": "worktrees",
+  "discovery": {
+    "enabled": true,
+    "allow_skip": false,
+    "model": "sol",
+    "effort": "medium",
+    "max_sessions": 2,
+    "max_follow_up_rounds": 1
+  },
+  "adaptive": {
+    "max_attempts": 3,
+    "max_infrastructure_retries": 1,
+    "max_repair_rounds": 2,
+    "max_repairs_per_round": 3,
+    "max_total_attempts": 30,
+    "max_run_seconds": 14400,
+    "max_observed_tokens": 1000000,
+    "stall_seconds": 600,
+    "poll_seconds": 0.2,
+    "repeated_failure_limit": 2,
+    "reuse_sidekick_threads": false,
+    "ladder": [
+      {
+        "model": "luna",
+        "effort": "medium"
+      },
+      {
+        "model": "luna",
+        "effort": "high"
+      },
+      {
+        "model": "sol",
+        "effort": "high"
+      },
+      {
+        "model": "astra",
+        "effort": "high"
+      }
+    ]
+  },
+  "task_type_routes": {},
+  "checks": {},
+  "providers": {
+    "codex": {
+      "type": "codex",
+      "command": [
+        "codex"
+      ],
+      "config": {}
+    }
+  },
+  "models": {
+    "luna": {
+      "provider": "codex",
+      "model": "gpt-6-luna",
+      "efforts": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "description": "Focused, mechanical, well-specified work and test execution"
+    },
+    "sol": {
+      "provider": "codex",
+      "model": "gpt-6-sol",
+      "efforts": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "description": "Implementation, debugging, and tasks needing substantial reasoning"
+    },
+    "astra": {
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "frontier": true,
+      "description": "Ambiguity, architecture, high-stakes judgment, and final integration"
+    }
+  },
+  "routing": {
+    "simple": {
+      "model": "luna",
+      "effort": "medium"
+    },
+    "moderate": {
+      "model": "sol",
+      "effort": "medium"
+    },
+    "complex": {
+      "model": "sol",
+      "effort": "high"
+    },
+    "frontier": {
+      "model": "astra",
+      "effort": "high"
+    }
+  },
+  "orchestrator": {
+    "model": "astra",
+    "effort": "high"
+  },
+  "reviewer": {
+    "model": "astra",
+    "effort": "high"
+  }
+}

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-sidekick-router"
+version = "0.4.0"
+description = "Markdown handoffs and independent Codex sessions"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+sidekick-router = "router:main"
+
+[tool.setuptools]
+py-modules = ["router"]
+
+[tool.setuptools.data-files]
+"share/codex-sidekick-router" = ["config.json", "ORCHESTRATOR.md", "README.md", "ADAPTIVE.md"]

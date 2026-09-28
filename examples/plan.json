@@ -1,0 +1,25 @@
+{
+  "sidekicks": [
+    {
+      "id": "implementation",
+      "task": "Implement the requested change. Inspect relevant source and existing tests. Add focused regression coverage and run it.",
+      "context": "Replace this with the relevant requirements, design decisions, file references, and acceptance criteria from the initial conversation.",
+      "model": "sol",
+      "effort": "high",
+      "rationale": "Implementation needs reasoning but has a bounded outcome.",
+      "depends_on": []
+    },
+    {
+      "id": "verification",
+      "task": "Verify the implementation against the acceptance criteria and run the relevant broader tests. Report exact failures and fix bounded regressions.",
+      "context": "Replace this with verification requirements and project-specific test commands.",
+      "rationale": "Executing established tests is focused work; architectural issues go to the reviewer.",
+      "depends_on": [
+        "implementation"
+      ],
+      "model": "luna",
+      "effort": "medium"
+    }
+  ],
+  "reviewer_prompt": "Complete the original task. Inspect the implementation and test evidence, resolve remaining issues, and verify acceptance criteria. Check scope and edge cases. Make any necessary corrective edits in your own workspace. Return an honest completed or incomplete report."
+}
