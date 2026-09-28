@@ -1,4 +1,4 @@
-# Codex Sidekick Router
+# Codex Orchestration / Router
 
 A dependency-free Python runner for **independent Codex sessions with Markdown
 handoffs**. Discovery informs the orchestrator's plan; Python launches; a fresh frontier
